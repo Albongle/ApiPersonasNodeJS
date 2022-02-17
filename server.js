@@ -13,7 +13,7 @@ app.use(express.urlencoded({extended:false}));
 app.use("/api/Personas", personas);
 app.use(mdw.rutaNoImplementada);
 
-
+app.get("/", (req,res)=> res.send("Bienvenido Api Personas"));
 //settings
 
 app.set("port", process.env.PORT || 3000);
