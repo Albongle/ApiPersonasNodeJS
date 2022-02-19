@@ -47,6 +47,7 @@ module.exports = class Persona {
       let id = this.#getMaxId();
       id++;
       objeto.id = id;
+      objeto.edad = parseInt(objeto.edad);
       Persona.#arrPersonas.push(objeto);
       return objeto;
     }
