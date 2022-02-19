@@ -21,7 +21,7 @@ router.post("/",(req,res)=>{
     let objRetorno = servicePersonas.setNewPersona(obj);
     
     if(objRetorno!=null){
-        res.status(200).json(obj);
+        res.status(200).json({status:"ok",data:obj});
     }else{
         res.status(406).json({error:'Error en la carga de la Persona'});
     }
