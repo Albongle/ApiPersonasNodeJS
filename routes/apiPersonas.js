@@ -5,7 +5,7 @@ const servicePersonas = new persona();
 
 router.get("/",(req, res)=>{
 
-    res.status(200).json(servicePersonas.getPersonas());
+    res.status(200).json({status:"ok",data:servicePersonas.getPersonas()});
 
 })
 
@@ -13,7 +13,7 @@ router.get("/:id",(req,res)=>{
     let {id} = req.params;
     id = parseInt(id);
     let obj = servicePersonas.getPersonaById(id);
-    obj != null ? res.status(200).json({status:"ok",data:obj}): res.status(400).json({error:'Producto no encontrado'});
+    obj != null ? res.status(200).json({status:"ok",data:obj}): res.status(400).json({error:'Persona no encontrada'});
 });
 
 router.post("/",(req,res)=>{
